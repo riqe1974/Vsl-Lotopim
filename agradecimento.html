@@ -3,19 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Obrigado por se cadastrar 🎁</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-XXXXXXX'); // substitua seu ID
-  </script>
-  <!-- End Google Tag Manager -->
-
+  <title>Obrigado por baixar o eBook 🎁 - Lotopim</title>
+  
   <!-- Facebook Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s)
@@ -34,51 +23,289 @@
     <img height="1" width="1" src="https://www.facebook.com/tr?id=1899065511041406&ev=PageView&noscript=1"/>
   </noscript>
   <!-- End Facebook Pixel Code -->
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
+    :root {
+      --bg: #08070c;
+      --accent: #ffd700;
+      --accent-dark: #e6c200;
+      --text-light: #f8f9fa;
+      --text-muted: #adb5bd;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --card-border: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      padding: 60px 20px;
+      background: linear-gradient(135deg, #020205 0%, #0b0d12 50%, #020205 100%);
+      color: var(--text-light);
       font-family: 'Poppins', sans-serif;
+      margin: 0;
+      overflow-x: hidden;
+      min-height: 100vh;
+      line-height: 1.6;
     }
+
+    .thankyou-wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .thankyou-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .logo-container {
+      margin-bottom: 1.5rem;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.8rem;
+      color: var(--accent);
+      letter-spacing: 1px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
     h1 {
-      color: #00ff88;
+      font-size: 1.8rem;
       font-weight: 700;
-      margin-bottom: 20px;
+      color: var(--text-light);
+      margin-bottom: 1rem;
     }
-    p {
+
+    .highlight {
+      color: var(--accent);
+    }
+
+    .sub {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .success-icon {
+      font-size: 4rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      animation: bounce 1s ease infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .next-steps {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      text-align: left;
+    }
+
+    .next-steps h3 {
+      color: var(--accent);
       font-size: 1.2rem;
-      color: #ccc;
+      margin-bottom: 1rem;
     }
-    .btn-home {
-      margin-top: 30px;
-      background-color: #ffcc00;
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .step-number {
+      background: var(--accent);
       color: #000;
+      font-weight: 700;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .btn-cta {
+      background: var(--accent);
+      color: #000;
+      font-weight: 700;
       border: none;
-      border-radius: 30px;
-      padding: 12px 30px;
-      font-weight: 600;
-      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 50px;
+      font-size: 1rem;
       display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+      margin-top: 1rem;
+      text-decoration: none;
     }
-    .btn-home:hover {
-      background-color: #fff200;
+
+    .btn-cta:hover {
+      background: var(--accent-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
       color: #000;
+    }
+
+    .small-text { 
+      font-size: .85rem; 
+      opacity: .7; 
+      margin-top: 2rem;
+    }
+
+    .guarantee-badge {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 215, 0, 0.1);
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      border-radius: 50px;
+      padding: 8px 16px;
+      margin: 1rem 0;
+      font-size: 0.85rem;
+    }
+
+    .guarantee-badge i {
+      color: var(--accent);
+      margin-right: 8px;
+    }
+
+    .ebook-info {
+      background: rgba(255, 215, 0, 0.05);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .ebook-info h4 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .ebook-info ul {
+      text-align: left;
+      padding-left: 1.5rem;
+    }
+
+    .ebook-info li {
+      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 576px) {
+      .thankyou-card {
+        padding: 1.5rem;
+      }
+      
+      h1 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
+  <main class="thankyou-wrap">
+    <div class="thankyou-card">
+      <div class="logo-container">
+        <div class="logo">LOTOPIM</div>
+      </div>
+      
+      <div class="success-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      
+      <h1>Obrigado por baixar o <span class="highlight">eBook!</span></h1>
+      <p class="sub">Seu eBook exclusivo já foi baixado com sucesso.</p>
 
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <div class="ebook-info">
+        <h4><i class="fas fa-file-pdf"></i> Sobre seu eBook</h4>
+        <p>Você recebeu o <strong>eBook Exclusivo da Lotofácil</strong> com:</p>
+        <ul>
+          <li>Análise detalhada de dezenas pares e ímpares</li>
+          <li>Método de balanceamento correto para seus jogos</li>
+          <li>Dicas avançadas para aumentar suas chances</li>
+          <li>Exemplos práticos de aplicação</li>
+        </ul>
+      </div>
 
-  <h1>🎉 Obrigado por se cadastrar!</h1>
-  <p>Seu brinde já foi baixado e enviado também para seu e-mail.</p>
-  <p>Aproveite para conhecer o <strong>Lotopim</strong> e descubra como criar jogos inteligentes na Lotofácil.</p>
+      <div class="next-steps">
+        <h3>Próximos passos:</h3>
+        
+        <div class="step">
+          <div class="step-number">1</div>
+          <div>
+            <strong>Abra o eBook</strong>
+            <p class="small-text">Verifique sua pasta de downloads e abra o arquivo PDF.</p>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">2</div>
+          <div>
+            <strong>Estude o método</strong>
+            <p class="small-text">Aprenda como o balanceamento de pares e ímpares pode transformar seus jogos.</p>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">3</div>
+          <div>
+            <strong>Aplique o conhecimento</strong>
+            <p class="small-text">Use as técnicas aprendidas para criar jogos mais equilibrados.</p>
+          </div>
+        </div>
+      </div>
 
-  <a href="https://lotopim.com.br" class="btn-home">Visitar o Lotopim</a>
+      <a href="index.html" class="btn-cta">
+        <i class="fas fa-arrow-left me-2"></i> Voltar para a página inicial
+      </a>
 
+      <div class="guarantee-badge">
+        <i class="fas fa-shield-alt"></i>
+        <span>Conteúdo 100% gratuito e seguro</span>
+      </div>
+
+      <div class="mt-3 text-center small-text">
+        © 2025 Lotopim — Todos os direitos reservados
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <script>
+    // Disparar confetti ao carregar a página
+    window.onload = function() {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#FFD700','#FF4500','#00FF88']
+      });
+    };
+  </script>
 </body>
 </html>
